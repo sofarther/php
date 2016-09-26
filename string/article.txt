@@ -1,0 +1,7 @@
+<p><b>this is a test</b></p>
+[color=red]hello,world[/color]
+[url=http://www.sofar.com/html/index.html]跳转到index.html[/url]
+<?php
+  echo "this is a php codes";
+?>
+default site : www.mysite.com;

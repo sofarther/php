@@ -1,0 +1,3 @@
+<{showmsg times="10" content="hello,world" size="4" color="aqua"}>
+<h3>Block</h3>
+<{msg times="5"  size="5" color="blue"}>你好！<{/msg}>

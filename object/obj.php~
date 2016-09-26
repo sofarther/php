@@ -1,0 +1,19 @@
+<?php
+//在PHP中，顶层的Class被命名为“stdClass”，看成是一个不含任何属性和方法的类。
+//可以创建一个空对象,然后向其中添加属性和方法
+ $obj =new stdClass();
+  $obj->name='sofar';
+  $obj->sex='male';
+  //$obj->say = function($msg){ echo $msg;};
+//foreach 遍历了对象其能够访问的可见属性。
+  foreach($obj as $k => $v){
+   echo $obj->$k;
+  }
+ // $obj->say('hello');
+  $func = function($msg){
+    echo $msg;
+  };
+  $func('hello');
+  $obj->say=$func;
+  $obj->say('hello');
+?>

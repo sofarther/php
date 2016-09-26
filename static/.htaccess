@@ -1,0 +1,7 @@
+
+ RewriteEngine On
+
+#正则表达式中反向引用时，只能使用$n形式，不能使用\\n
+RewriteRule  test-(\w+)-(\w+)\.html$ test.php?name=$1&passwd=$2
+RewriteRule  pathinfo-(\w+)-(\w+)\.html$ pathinfo.php/name/$1/passwd/$2
+

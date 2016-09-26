@@ -1,0 +1,82 @@
+<?php
+	//$url='https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png';
+	//$url='http://img5.imgtn.bdimg.com/it/u=1864751896,666907639&fm=21&gp=0.jpg';
+	$url='https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=2745381270,2206375846&fm=96&s=10346C33511F41CA587DE9DF0000C0B3';
+
+  function init($url){
+ 
+  $ch=curl_init();
+  
+  $opt=array();
+  
+  $opt[CURLOPT_URL]=$url;
+  
+  $opt[CURLOPT_HEADER]=false;
+ 
+ $opt[CURLOPT_CONNECTTIMEOUT]=15;
+ 
+ $opt[CURLOPT_TIMEOUT]=300;
+ 
+ $opt[CURLOPT_AUTOREFERER]=true;
+
+ 
+ $opt[CURLOPT_USERAGENT]='Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:33.0) Gecko/20100101 Firefox/33.0';
+ $opt[CURLOPT_RETURNTRANSFER]=true;
+ 
+ $opt[CURLOPT_FOLLOWLOCATION]=true;
+ 
+ $opt[CURLOPT_MAXREDIRS]=10;
+ curl_setopt_array($ch,$opt);
+
+  return $ch;
+
+}
+/*
+ $ch=init($url);
+
+ $img =curl_exec($ch);
+	curl_close($ch);
+	if($img){
+		echo $img;
+	}else{
+		echo 'null';
+	}
+	
+die;
+	
+  */     $ch =curl_init();
+//设置头信息，防止显示 403 Forbidden
+/*
+有些网站可能是出于安全的考虑不允许curl命令的访问，就像有些网站不让ping一样。但是通过浏览器是可以访问的。这种情况我们就需要采用人工模拟浏览器的方式去访问，也就是采用设置User-Agent的方式来做。
+*/
+	$headers['User-Agent']='Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:33.0) Gecko/20100101 Firefox/33.0';
+$headerArr = array(); 
+        foreach( $headers as $n => $v ) { 
+            $headerArr[] = $n .':' . $v;  
+        }
+
+	curl_setopt($ch,CURLOPT_URL,$url);
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT,10);	
+	 curl_setopt ($ch, CURLOPT_HTTPHEADER , $headerArr );
+	
+	$img =curl_exec($ch);
+	//获取下载的类型 ，NULL表示服务器没有发送有效的Content-Type: header
+    	$type =curl_getinfo($ch,CURLINFO_CONTENT_TYPE);
+	
+	curl_close($ch);
+	
+	if($img){
+  		if($type){
+			$type=substr($type,strrpos($type,'/')+1);
+		}
+		file_put_contents('tmp.'.$type,$img);
+	}else{
+		echo 'null';
+	}
+	
+
+
+
+  
+?>

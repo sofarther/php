@@ -1,0 +1,16 @@
+<?php
+ require "smarty_conf.inc.php";
+ $mysqli = new mysqli("localhost","root","","school");
+$res = $mysqli->query("select stu_name,math,english,history from student");
+$fields = $res->fetch_fields();
+$title="smarty test";
+//$tpl->assign("title",$title);
+//$tpl->assign('author','sofar');
+$tpl->assign('num',23);
+$tpl->assign('caption',$fields[1]->table);
+$tpl->assign('cols',$fields);
+$tpl->assign('students',$res);
+$tpl->display('var.tpl');
+$res->close();
+$mysqli->close();
+?>

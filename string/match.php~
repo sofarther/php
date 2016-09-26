@@ -1,0 +1,8 @@
+<?php
+   $str="abc234kgl432nrcdc474mbld352ff";
+   $p ="/c(\d{3})/";
+ // preg_match($p,$str,$matches,PREG_OFFSET_CAPTURE );//增加匹配的字符串的偏移
+    //print_r($matches);//Array ( [0] => Array ( [0] => 234 [1] => 3 ) )
+  preg_match_all($p,$str,$matches,PREG_OFFSET_CAPTURE );
+ print_r($matches);
+?>

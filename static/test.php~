@@ -1,0 +1,5 @@
+<?php
+//使用http://localhost/php/static/test-sofar-ss.html访问
+  echo $_GET['name']."&nbsp;".$_GET['passwd'];
+print $_SERVER['PATH_INFO'];
+?>

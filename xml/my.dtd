@@ -1,0 +1,6 @@
+
+<!ELEMENT class (stu+)>
+<!ELEMENT stu (name,sex,age,email?)>
+<!ATTLIST stu
+ id ID #REQUIRED
+ >

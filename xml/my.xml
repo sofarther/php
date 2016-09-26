@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE class SYSTEM "my.dtd">
+<class>
+  <stu id="st001">
+  <name>sofar</name>
+  <sex>male</sex>
+  <age>25</age>
+  <addr><country>China</country></addr>
+  </stu>
+  <stu id="st002" sn="sn0">
+  <name>mbf</name><sex>female</sex><age>22</age><email>hedd@mali.com</email></stu>
+  <stu id="st003"><name>zss</name><sex>male</sex><age>22</age></stu>
+<stu id="st005" sn="sn3"><name>bvd</name><sex>male</sex><age>222</age></stu><stu id="st004" sn="sn2"><name>lko</name><sex>female</sex><age>34</age><addr>lpeoga</addr></stu></class>

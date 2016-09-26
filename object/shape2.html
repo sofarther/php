@@ -1,0 +1,48 @@
+<html>
+<head>
+ <meta http-equiv="content-type" content="text/html;charset =utf-8"/>
+<script type="text/javascript">
+  function selectShape(obj){
+  var table = document.getElementById(obj);
+  var tables =document.getElementsByTagName("table");
+  for(var t=0; t<tables.length; t++){
+    if(tables[t] == table){
+    table.style.display="block";
+  }else{
+    tables[t].style.display="none";
+  }
+  }
+  }
+</script>
+</head>
+ <body>
+ <form action="shape.php" method="post">
+<center>
+  <input type="radio" name="action" value="1" onclick=" selectShape('rect')" checked/>矩形
+   <input type="radio" name="action" value="2" onclick="selectShape('circle')" />圆形
+  <input type="radio" name="action" value="3" onclick="selectShape('triangle')"/>三角形
+ </center>
+<br/><br/>
+<!--定义不同形状的输入界面-->
+<!--默认显示矩形-->
+ <table  id="rect" width="400px" align="center" border="0" style="display:block">
+ <tr><td>长：</td><td><input type="text" name="width"/></td></tr>
+ <tr><td>宽：</td><td><input type="text" name="height"/></td></tr>
+
+<tr><td colspan="2" align="center"><input type="submit" value="计算"/></td></tr>
+</table>
+
+<table  id="circle" width="400px" align="center" border="0" style="display :none" >
+ <tr><td>半径：</td><td> <input type="text" name="radius"/></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" value="计算"/></td></tr>
+</table>
+<table id="triangle" width="400px" align="center" border="0" style="display :none">
+<tr><td>第一条边：</td><td><input type='text' name='side1' /></td></tr>
+<tr><td>第二条边：</td><td><input type='text' name='side2' /></td></tr>
+<tr><td>第三条边：</td><td><input type='text' name='side3' /></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" value="计算"/></td></tr>
+</table>
+<input type="hidden" name="act" value="true"/>
+</form>
+</body>
+</html>

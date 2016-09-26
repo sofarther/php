@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>文章发布</title>
+</head>
+<body>
+<h2><center>文章发布</center></h2>
+<div style="margin:auto auto; width:800px;">
+<form action="article_post.php" method="post" target="_blank">
+<div style="width:200px; float:left; margin:20px; padding:10px;">
+  <h3> 选项</h3>
+  <ul style="list-style-type:none; margin:0px; padding:0px; align:center;">
+   <li><input type="checkbox" name="parse[]" value="0">删除HTML标签</li>
+   <li><input type="checkbox" name="parse[]" value="1">转换HTML标签实体</li>
+   <li><input type="checkbox" name="parse[]" value="2">使用UBB代码</li>
+   <li><input type="checkbox" name="parse[]" value="3">开启URL识别</li>
+   <li><input type="checkbox" name="parse[]" value="4">禁用非法字符</li>
+   <li><input type="checkbox" name="parse[]" value="5">PHP代码高亮</li>
+   <li><input type="checkbox" name="parse[]" value="6">原样显示</li>
+   <li><input type="checkbox" name="parse[]" value="7">同步换行</li>
+ </ul>
+</div>
+<div style="width:400px; float:left;">
+ <h3><center>文章编辑</center></h3>
+ <h4>文章标题 &nbsp; &nbsp; &nbsp; &nbsp;
+   <input type="text" name="caption" value="">
+   </h4>
+ <h4>文章内容<textarea rows="7" cols="50" name="content" value=""></textarea>
+ </h4>
+ <h4><input type="submit" name="submit" value="发布"></h4>
+</div>
+</form>
+</div>
+</body>
+</html>

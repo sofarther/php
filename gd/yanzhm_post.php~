@@ -1,0 +1,31 @@
+<?php
+session_start();  //开启SESSION
+  if(isset($_POST["submit"])){  //判断验证码输入是否正确
+    if(strtolower(trim($_POST["test"]))==strtolower($_SESSION["validcode"])){
+     echo "提交成功";
+}
+ else { 
+    echo '<font color="red">验证码错误!!</font>';
+}
+}
+?>
+<html>
+ <head>
+   <title>验证码</title>
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+<script>
+//定义一个JavaScript函数，当单击验证码时被调用，重新请求并获取一个新图片
+ function newgdcode(obj,url){
+     //后面传入一个随机参数，否则在IE7和火狐下不能刷新图片
+  obj.src=url+"?nowtime="+ new Date().getTime();
+}
+</script>
+</head>
+<body>
+<img src="yanzhm_test.php" title="看不清楚，换一张" style="cursor:pointer;"onclick="javascript: newgdcode(this , this.src);">
+ <form method="post" action="yanzhm_post.php">
+   <input type="text" name="test" value=""><br/>
+  <input type="submit" name="submit" value="提交">
+</form>
+</body>
+</html>

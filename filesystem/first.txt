@@ -1,0 +1,11 @@
+共有10行数据
+0:使用file_put_contents函数写入文件,不需要打开文件
+1:使用file_put_contents函数写入文件,不需要打开文件
+2:使用file_put_contents函数写入文件,不需要打开文件
+3:使用file_put_contents函数写入文件,不需要打开文件
+4:使用file_put_contents函数写入文件,不需要打开文件
+5:使用file_put_contents函数写入文件,不需要打开文件
+6:使用file_put_contents函数写入文件,不需要打开文件
+7:使用file_put_contents函数写入文件,不需要打开文件
+8:使用file_put_contents函数写入文件,不需要打开文件
+9:使用file_put_contents函数写入文件,不需要打开文件

@@ -1,0 +1,8 @@
+<?php
+  require("/home/public_html/php/mysql/password.inc.php");
+ $mysqli = new mysqli($dbhost,$user,$passwd, $dbname);
+if(mysqli_connect_errno()){
+   printf("连接失败： %s\n<br/>",mysqli_connect_error());
+  exit;
+}
+?>
